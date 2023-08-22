@@ -1,0 +1,63 @@
+/**************** GENERAL RESET *******************/
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+
+/******************* PAGE STYLINGS ******************/
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  position: relative;
+  width: 300px;
+  aspect-ratio: 1/1;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease-in;
+  cursor: pointer;
+}
+
+.card-side {
+  position: absolute;
+  inset: 0;
+  font-size: 30px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.card-front {
+  z-index: 1;
+  backface-visibility: hidden;
+  background-color: pink;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  background-color: lightblue;
+}
+
+.card-container:hover > .card {
+  transform: rotateY(180deg);
+}
+
+.card-container {
+  perspective: 1000px;
+}
